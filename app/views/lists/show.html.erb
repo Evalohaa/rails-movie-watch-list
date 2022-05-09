@@ -1,5 +1,13 @@
 <h1><%= @list.name %></h1>
 
+<%= @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <%= bookmark.movie.overview %>
+  <%= link_to 'Delete',
+                  list_path(@list),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "text-decoration-none" %>
+<% end %>
 
 <%= link_to "Retour aux listes", lists_path %>
 
