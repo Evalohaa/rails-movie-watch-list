@@ -1,0 +1,40 @@
+// @media(max-width: 992px) {
+//   .list-cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// @media(max-width: 768px) {
+//   .list-cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// @media(max-width: 500px) {
+//   .list-cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+.list-cards {
+  display: flex;
+}
+
+.list-image {
+  height: 200px;
+  border-radius: 7px;
+  box-shadow: 2px 4px 10px grey;
+  position: relative;
+}
+
+.list-row {
+  margin: 20px;
+  // border-radius: 10px;
+}
+
+.title-image {
+  position: absolute;
+}
