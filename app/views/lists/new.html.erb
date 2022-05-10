@@ -1,6 +1,8 @@
 <h1>What list do you want to create ?</h1>
-
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name, collection: ["Drame", "Comédie", "Amour", "Action", "Documentaire"] %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, collection: ["Drame", "Comédie", "Amour", "Action", "Documentaire"] %>
+    <%= f.input :image_url %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
