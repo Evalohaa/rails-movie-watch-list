@@ -1,19 +1,22 @@
 <div class="container">
-  <div class= "d-flex justify-content-between">
+  <div class= "d-flex justify-content-between py-4">
     <h1><%= @list.name %></h1>
     <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat" %>
   </div>
-  <div class="row">
+  <div class="row d-flex py-3">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-12 col-sm-6 mb-3">
-        <ul>
-          <li><%= bookmark.movie.title %></li>
-          <li><%= bookmark.movie.overview %></li>
-        </ul>
-        <%= link_to 'Delete',
-                        list_bookmark_path(@list),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" }, class: "text-decoration-none" %>
+        <div class="movie-card shadow">
+          <%= image_tag bookmark.movie.poster_url, class: "movie-image" %>
+          <div class="text-card">
+            <%= bookmark.movie.title %>
+            <%= bookmark.movie.overview %>
+            <%= link_to 'Delete',
+                            list_bookmark_path(@list),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" }, class: "text-decoration-none" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
