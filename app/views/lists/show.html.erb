@@ -1,3 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.image_url %>');">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
 <div class="container">
   <div class= "d-flex justify-content-between py-4">
     <h1><%= @list.name %></h1>
@@ -8,13 +14,21 @@
       <div class="col-12 col-sm-6 mb-3">
         <div class="movie-card shadow">
           <%= image_tag bookmark.movie.poster_url, class: "movie-image" %>
-          <div class="text-card">
-            <%= bookmark.movie.title %>
-            <%= bookmark.movie.overview %>
-            <%= link_to 'Delete',
-                            list_bookmark_path(@list),
-                            method: :delete,
-                            data: { confirm: "Are you sure?" }, class: "text-decoration-none" %>
+          <div class="text-card d-flex flex-column">
+            <div class="p-2">
+              <strong><%= bookmark.movie.title %></strong> • <span><%= bookmark.movie.rating %></span>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="p-2">
+              <%= bookmark.movie.overview %>
+            </div>
+            <div class="d-flex justify-content-around">
+              <%= bookmark.comment %>
+              <%= link_to 'Delete',
+                              bookmark_path(bookmark),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" }, class: "text-decoration-none" %>
+            </div>
           </div>
         </div>
       </div>
