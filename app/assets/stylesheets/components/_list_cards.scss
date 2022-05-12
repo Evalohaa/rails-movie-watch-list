@@ -13,18 +13,12 @@
   font-size: 25px;
 }
 
-.text-card {
-  background-color: white;
-  height: 200px;
-}
 .movie-card {
   height: 400px;
-  // background-color: white;
-  // height: 220px;
-  // box-shadow: 2px 4px 10px lightgrey;
-  // border-radius: 5px;
-  // width: 640px;
-  // margin: 10px;
+  padding: 0px;
+  background-color: white;
+  border-radius: 5px 5px;
+  // padding-left: 10px;
 }
 
 .movie-image {
@@ -32,4 +26,5 @@
   height: 220px;
   object-fit: cover;
   object-position: center;
+  border-radius: 5px 5px 0px 0px;
 }
